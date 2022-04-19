@@ -3,22 +3,34 @@
 PyPDF2 is a [free] and open source pure-python PDF library capable of
 splitting, merging, cropping, and transforming the pages of PDF files.
 It can also add custom data, viewing options, and passwords to PDF
-files. PyPDF2 can retrieve text and metadata from PDFs as well.
-
-## PyMuPDF and PikePDF
-
-[PyMuPDF] is a Python binding to [MuPDF] and [PikePDF] is the Python
-binding to [QPDF].
-
-While both are excellent libraries for various use-cases, using them is
-not always possible even when they support the use-case. Both of them
-are powered by C libraries which makes installation harder and might
-cause security concerns. For MuPDF you might also need to buy a
-commercial license.
+files. PyPDF2 retrieve metadata from PDFs.
 
 A core feature of PyPDF2 is that it's pure Python. That means there is
 no C dependency. It has been used for over 10 years and for this reason
 a lot of support via StackOverflow and examples on the internet.
+
+## pikepdf
+
+[pikepdf] is a Python binding to [QPDF], a well regarded C++ library
+for inspecting and correcting PDFs. pikepdf and PyPDF2 have feature 
+sets that don't exactly - some tasks are easier in, some are easier in 
+the other.
+
+pikepdf provides binary wheels for all common platforms to ease 
+installation; however, users of less common platforms or those with 
+security concerns about binary wheels may need  to compile the library 
+from source. pikepdf is licensed under MPL2.
+
+## PyMuPDF
+
+[PyMuPDF] is a Python binding to [MuPDF]. PyMuPDF is a powerful and
+feature-rich PDF library - one of the most capable open source PDF
+libraries. PyMuPDF also provides binary wheels, with the same drawbacks
+as mentioned for pikepdf.
+
+However, MuPDF is licensed under the highly restrictive AGPLv3 license; 
+some users may need to consider a commercial license unless they intend 
+to release their software under AGPLv3 as well.
 
 ## pyPDF
 
@@ -45,22 +57,21 @@ bring the community back to one path of development. Let's see.
   [free]: https://en.wikipedia.org/wiki/Free_software
   [PyMuPDF]: https://pypi.org/project/PyMuPDF/
   [MuPDF]: https://mupdf.com/
-  [PikePDF]: https://pypi.org/project/pikepdf/
+  [pikepdf]: https://pypi.org/project/pikepdf/
   [QPDF]: https://github.com/qpdf/qpdf
 
+## pdfminer.six
 
-## pdfrw and pdfminer
-
-I don't have experience with either of those libraries. Please add a
-comparison if you know PyPDF2 and [`pdfrw`](https://pypi.org/project/pdfrw/) or
-[`pdfminer.six`](https://pypi.org/project/pdfminer.six/)!
+[`pdfminer.six`](https://pypi.org/project/pdfminer.six/) is a PDF library
+focused on text extraction and reconstruction. It is capable of extracting
+text from PDFs along with positional information. pdfminer.six is focused
+on this task and does not generate or modify PDFs.
 
 Please be aware that there is also
 [`pdfminer`](https://pypi.org/project/pdfminer/) which is not maintained.
-Then there is [`pdfrw2`](https://pypi.org/project/pdfrw2/) which doesn't have
-a large community behind it.
 
-And there are more:
+## Others
 
-
+* [`pdfrw`](https://pypi.org/project/pdfrw/)
+* [`pdfrw2`](https://pypi.org/project/pdfrw2/)
 * [`pyfpdf`](https://github.com/reingart/pyfpdf)
